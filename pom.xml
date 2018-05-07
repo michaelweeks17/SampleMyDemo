@@ -33,7 +33,7 @@
 			<redeploy>true</redeploy>
 			<environment>Production</environment>
 			<target>Mike-Cluster</target>
-			<targetType>server</targetType>
+			<targetType>cluster</targetType>
 			<!-- <workerType>Micro</workerType>-->
 		</configuration>
 		<executions>
