@@ -20,37 +20,39 @@
 	
 		<plugins>		
 		
-<!-- Deploy to Cloudhub -->
-<plugin>
-<groupId>org.mule.tools.maven</groupId>
-<artifactId>mule-maven-plugin</artifactId>
-<version>2.0</version>
-<configuration>
-<deploymentType>cloudhub</deploymentType>
-<muleVersion>3.8.4</muleVersion>
-<username>michaelweeks</username>
-<password>Mule2017!</password>
-<redeploy>true</redeploy>
-<environment>Production</environment>
-<workerType>Micro</workerType>
-</configuration>
-<executions>
-<execution>
-<id>deploy</id>
-<phase>deploy</phase>
-<goals>
-<goal>deploy</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-deploy-plugin</artifactId>
-<configuration>
-<skip>true</skip>
-</configuration>
-</plugin>
+	<!-- Deploy to Cloudhub -->
+	<plugin>
+		<groupId>org.mule.tools.maven</groupId>
+		<artifactId>mule-maven-plugin</artifactId>
+		<version>2.0</version>
+		<configuration>
+			<deploymentType>cloudhub</deploymentType>
+			<muleVersion>3.8.4</muleVersion>
+			<username>michaelweeks</username>
+			<password>Mule2017!</password>
+			<redeploy>true</redeploy>
+			<environment>Production</environment>
+			<target>Mike-Cluster</target>
+			<targetType>server</targetType>
+			<!-- <workerType>Micro</workerType>-->
+		</configuration>
+		<executions>
+			<execution>
+				<id>deploy</id>
+				<phase>deploy</phase>
+				<goals>
+					<goal>deploy</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-deploy-plugin</artifactId>
+		<configuration>
+			<skip>true</skip>
+		</configuration>
+	</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
